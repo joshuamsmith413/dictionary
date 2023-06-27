@@ -9,21 +9,25 @@ export default function Definition({ wordDefinition }: IProps) {
     const { word, phonetic, phonetics, origin, meanings, } = wordDefinition[0];
 
     const renderAntonyms = (antonyms: TAntonyms) => {
-        return antonyms.map(antonym => {
-            return <p>{antonym}</p>
+        let antonymStr = '';
+        antonyms.forEach(antonym => {
+            antonymStr += `${antonym}, `
         })
+        return <p>{antonymStr.replace(/,\s*$/, "")}</p>
     }
     
     const rendersynonyms = (synonyms: TSynonyms) => {
-        return synonyms.map(synonym => {
-            return <p>{synonym}</p>
+        let synonymStr = ''
+        synonyms.forEach(synonym => {
+            synonymStr += `${synonym}, `;
         })
+        return <p>{synonymStr.replace(/,\s*$/, "")}</p>
     }
 
     const renderDefinitions = (definitions: TDefinition[]) => {
         return definitions.map((def: TDefinition, index) => {
             return (
-                <div className="definition">
+                <div className="definition" key={index}>
                     <p>{index+1}. {def.definition}</p>
                     <div className="synonyms">
                         {def.synonyms.length > 0 &&<strong>Synonyms</strong>}
@@ -41,7 +45,7 @@ export default function Definition({ wordDefinition }: IProps) {
     const renderMeanings = (meanings: TMeaning[]) => {
         return meanings.map((meaning: TMeaning) => {
             return (
-                <div className="meaning">
+                <div className="meaning" key={meaning.partOfSpeech}>
                     <div className="synonyms"></div>
                     <strong>{meaning.partOfSpeech}:</strong>
                     {renderDefinitions(meaning.definitions)}
@@ -60,7 +64,7 @@ export default function Definition({ wordDefinition }: IProps) {
 
     return (
         <div className="definition-block">
-            <h2>{word}</h2>
+            <p className="title"><strong>{word}: </strong> {phonetic}</p>
             <div className="info">
             <div className="meanings">
                 {renderMeanings(meanings)}
