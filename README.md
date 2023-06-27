@@ -1,7 +1,4 @@
-
-<img width="459" alt="Screen Shot 2023-06-27 at 2 03 40 PM" src="https://github.com/joshuamsmith413/dictionary/assets/38113225/dfd8670a-d323-4ff6-9b4f-1a9193b73e01">
-
-
+<img width="417" alt="Screen Shot 2023-06-27 at 5 10 08 PM" src="https://github.com/joshuamsmith413/dictionary/assets/38113225/09d0bd00-4241-45af-be6d-3b6934f9da05">
 
 # Getting Started with Create React App
 
