@@ -21,10 +21,10 @@ export default function Definition({ wordDefinition }: IProps) {
     }
 
     const renderDefinitions = (definitions: TDefinition[]) => {
-        return definitions.map((def: TDefinition) => {
+        return definitions.map((def: TDefinition, index) => {
             return (
                 <div className="definition">
-                    <p>{def.definition}</p>
+                    <p>{index+1}. {def.definition}</p>
                     <div className="synonyms">
                         {def.synonyms.length > 0 &&<strong>Synonyms</strong>}
                         {def.synonyms.length > 0 && rendersynonyms(def.synonyms)}
