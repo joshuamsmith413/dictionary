@@ -28,3 +28,9 @@ export type TWordDefinition = {
     origin: string,
     meanings: TMeaning[]
 }[];
+
+export type TError = {
+    message: string,
+    resolution: string,
+    title: string
+}

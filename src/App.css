@@ -19,6 +19,15 @@ strong {
   font-size: 14px;
 }
 
+
+.title {
+  font-size: 28px;
+}
+
+.title strong {
+  font-size: 28px;
+}
+
 h4 {
   margin: 10px 0 6px 0;
 }
