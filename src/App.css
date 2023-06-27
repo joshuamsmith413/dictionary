@@ -22,3 +22,7 @@ strong {
 h4 {
   margin: 10px 0 6px 0;
 }
+
+.synonyms, .antonyms {
+  margin: 10px 0;
+}
