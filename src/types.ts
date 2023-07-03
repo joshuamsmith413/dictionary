@@ -17,8 +17,8 @@ export type TMeaning = {
 };
 
 export type TPhonetics = {
-    text?: string,
-    audio?: string
+    text: string,
+    audio: string
 }[];
 
 export type TWordDefinition = {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import { TWordDefinition, TError } from './types';
 
 import Definition from './Definition';
@@ -36,9 +36,8 @@ function App() {
       <div className="form">
         <form onSubmit={(e: React.SyntheticEvent<HTMLFormElement>) => searchWord(e)}>
           <label htmlFor="word">Learn you some</label>
-          <br/>
           <input type="text" id="word" value={currentWord} placeholder="enter a word" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setWord(e)} />
-          <input type="submit" />
+          <input type="submit" className='btn'/>
         </form>
       </div>
       {(!!wordDefinition && !error) && <Definition wordDefinition={wordDefinition} />}
