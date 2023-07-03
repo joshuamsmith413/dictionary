@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
 import { TWordDefinition, TMeaning, TPhonetics, TSynonyms, TAntonyms, TDefinition } from './types';
+import Phonetics from './Phonetics';
 
 interface IProps extends HTMLAttributes<HTMLElement> {
     wordDefinition: TWordDefinition;
@@ -62,14 +63,22 @@ export default function Definition({ wordDefinition }: IProps) {
         })
     }
 
+    const getAudio = (arr: TPhonetics): string | undefined => {
+        let file = arr.find(obj => {
+            return obj.audio !== ''
+        })
+        return file?.audio;
+      }
+
     return (
-        <div className="definition-block">
-            <p className="title"><strong>{word}: </strong> {phonetic}</p>
+        <>
             <div className="info">
-            <div className="meanings">
-                {renderMeanings(meanings)}
+                <p className="title"><strong>{word}: </strong> {phonetic}</p>
+                    { getAudio(phonetics) !== undefined && <Phonetics audio={getAudio(phonetics)} />}
+                <div className="meanings">
+                    {renderMeanings(meanings)}
+                </div>
             </div>
-            </div>
-        </div>
+        </>
     )
 }

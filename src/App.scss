@@ -1,0 +1,61 @@
+.App {
+  width: 400px;
+  margin: 30px auto 0;
+  letter-spacing: .5px;
+
+  .btn {
+    background: #4287f5;
+    border-radius: 3px;
+    border: none;
+    padding: 4px 8px;
+    color: white;
+    letter-spacing: 1px;
+    width: 75px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input[type="text"] {
+      width: 150px;
+      margin: 4px 0;
+    }
+  }
+  
+  p {
+    margin: 2px;
+  }
+  
+  .meaning {
+    margin: 10px 0;
+  }
+  
+  .definition {
+    margin: 4px 0;
+  }
+
+  strong {
+    font-size: 14px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+
+  .title strong {
+    font-size: 28px;
+  }
+  
+  h4 {
+    margin: 10px 0 6px 0;
+  }
+  
+  .synonyms, .antonyms {
+    margin-bottom: 20px;
+  }
+
+  .phonetics {
+    margin: 4px 0;
+  }
+}
